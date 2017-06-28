@@ -1,6 +1,7 @@
 {
     "name": "izerocs/forum",
     "description": "Forum",
+    "license": "MIT",
 
     "authors": [
         {
@@ -9,7 +10,23 @@
         }
     ],
 
+    "autoload": {
+        "files": [
+            "assets/scripts/function.php",
+            "assets/scripts/define.php"
+        ],
+
+        "classmap": [
+            "assets/scripts/class/forward.php"
+        ],
+
+        "psr-4": {
+            "Lib\\": "lib"
+        }
+    },
+
     "require": {
+        "php": "^5.3.3|^7.0",
         "smarty/smarty": "~3.1",
         "asika/sitemap": "1.*"
     },
