@@ -1,0 +1,27 @@
+{
+    "name": "izerocs/forum",
+    "description": "Forum",
+
+    "authors": [
+        {
+            "name": "IzeroCs",
+            "email": "izero.cs@gmail.com"
+        }
+    ],
+
+    "require": {
+        "smarty/smarty": "~3.1",
+        "asika/sitemap": "1.*"
+    },
+
+    "require-dev": {
+        "fzaninotto/faker": "1.6.0"
+    },
+
+    "repositories": {
+        "packagist": {
+            "url":  "https://packagist.org",
+            "type": "composer"
+        }
+    }
+}
