@@ -1,0 +1,47 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+         -o-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin border-top-left-radius($tradius, $lradius) {
+    -webkit-border-top-left-radius: $tradius, $lradius;
+       -moz-border-top-left-radius: $tradius, $lradius;
+        -ms-border-top-left-radius: $tradius, $lradius;
+         -o-border-top-left-radius: $tradius, $lradius;
+            border-top-left-radius: $tradius, $lradius;
+}
+
+@mixin border-top-right-radius($tradius, $rradius) {
+    -webkit-border-top-right-radius: $tradius, $rradius;
+       -moz-border-top-right-radius: $tradius, $rradius;
+        -ms-border-top-right-radius: $tradius, $rradius;
+         -o-border-top-right-radius: $tradius, $rradius;
+            border-top-right-radius: $tradius, $rradius;
+}
+
+@mixin border-bottom-left-radius($bradius, $lradius) {
+    -webkit-border-bottom-left-radius: $bradius, $lradius;
+       -moz-border-bottom-left-radius: $bradius, $lradius;
+        -ms-border-bottom-left-radius: $bradius, $lradius;
+         -o-border-bottom-left-radius: $bradius, $lradius;
+            border-bottom-left-radius: $bradius, $lradius;
+}
+
+@mixin border-bottom-right-radius($bradius, $rradius) {
+    -webkit-border-bottom-right-radius: $bradius, $rradius;
+       -moz-border-bottom-right-radius: $bradius, $rradius;
+        -ms-border-bottom-right-radius: $bradius, $rradius;
+         -o-border-bottom-right-radius: $bradius, $rradius;
+            border-bottom-right-radius: $bradius, $rradius;
+}
+
+@mixin box-shadow($vshadow, $hshadow, $blur, $color) {
+    -webkit-box-shadow: $vshadow $hshadow $blur $color;
+       -moz-box-shadow: $vshadow $hshadow $blur $color;
+        -ms-box-shadow: $vshadow $hshadow $blur $color;
+         -o-box-shadow: $vshadow $hshadow $blur $color;
+            box-shadow: $vshadow $hshadow $blur $color;
+}

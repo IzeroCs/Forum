@@ -1,0 +1,15 @@
+@import "mixin";
+
+body {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+}
+
+a:link, a:visited {
+    color: #202020;
+    text-decoration: none;
+}
+
+@import "container";
+@import "header";

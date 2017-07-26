@@ -12,15 +12,17 @@
 
     "autoload": {
         "files": [
-            "assets/scripts/function.php",
-            "assets/scripts/define.php"
+            "app/scripts/function.php",
+            "app/scripts/define.php"
         ],
 
         "classmap": [
-            "assets/scripts/class/forward.php"
+            "app/scripts/class/forward.php"
         ],
 
         "psr-4": {
+            "Model\\": "app/models",
+            "Controller\\": "app/controllers",
             "Lib\\": "lib"
         }
     },

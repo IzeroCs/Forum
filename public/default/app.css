@@ -1,0 +1,51 @@
+body {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+}
+
+a:link, a:visited {
+    color: #202020;
+    text-decoration: none;
+}
+
+div#container-full {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+ul#header {
+    background-color: green;
+    line-height: 55px;
+    height: 55px;
+    -webkit-box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+ul#header li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul#header li#logo {
+    background-color: yellow;
+    float: left;
+}
+
+ul#header li#action ul {
+    background-color: red;
+    float: left;
+}
+
+ul#header li#action ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

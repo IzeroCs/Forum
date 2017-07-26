@@ -1,0 +1,37 @@
+$header_height: 55px;
+
+ul#header {
+    background-color: green;
+    line-height: $header_height;
+    height: $header_height;
+
+    @include box-shadow(10px, 0, 10px, rgba(0, 0, 0, 0.3));
+
+    & li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li#logo {
+        background-color: yellow;
+        float: left;
+    }
+}
+
+ul#header li#action ul {
+    background-color: red;
+    float: left;
+
+    & li  {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+
+    }
+}

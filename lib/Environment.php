@@ -2,6 +2,8 @@
 
     namespace Lib;
 
+    use Lib\Environment\EnvBaseAbs;
+
     final class Environment
     {
 
@@ -9,6 +11,10 @@
 
         private $array;
         private $cache;
+
+        const PREFIX_NAMESPACE_ENV_BLOCK = 'Lib\\Environment\\';
+        const PREFIX_NAME_ENV_BLOCK      = 'Env';
+        const METHOD_CALL_ENV_BLOCK      = 'invoke';
 
         protected function __construct(array $array)
         {
@@ -73,7 +79,10 @@
                     $array = $array[$entry];
                 }
 
-                return $this->envMatchesString($array);
+                $result = $this->envMatchesString($array);
+                $result = $this->envMatchesBlock($result);
+
+                return $result;
             }
 
             return $default;
@@ -81,10 +90,12 @@
 
         public static function envMatchesString($str)
         {
-            if (is_array($str) || preg_match('/\$\{(.+?)\}/si', $str, $matches) == false)
+            $pattern = '/\$\{(.+?)\}/si';
+
+            if (is_array($str) || preg_match($pattern, $str) == false)
                 return $str;
 
-            return preg_replace_callback('/\$\{(.+?)\}/si', function($matches) {
+            return preg_replace_callback($pattern, function($matches) {
                 $result = null;
 
                 if (isset($GLOBALS[$matches[1]]))
@@ -101,6 +112,31 @@
                 else if (is_resource($result))
                     return 'Resource';
                 return $result;
+            }, $str);
+        }
+
+        private function envMatchesBlock($str)
+        {
+            $pattern = '/(\$([a-zA-Z0-9\-\_]+)\{(.+?)\})/si';
+
+            if (is_array($str) || preg_match($pattern, $str) == false)
+                return $str;
+
+            return preg_replace_callback($pattern, function($matches) {
+                $name     = trim($matches[2]);
+                $params   = trim($matches[3]);
+                $class    = self::PREFIX_NAMESPACE_ENV_BLOCK . self::PREFIX_NAME_ENV_BLOCK . ucfirst($name);
+
+                if (method_exists($class, self::METHOD_CALL_ENV_BLOCK)) {
+                    return @call_user_func_array([
+                        $class,
+                        self::METHOD_CALL_ENV_BLOCK
+                    ], [
+                        EnvBaseAbs::processParams($params, $matches[0])
+                    ]);
+                }
+
+                return $matches[0];
             }, $str);
         }
 

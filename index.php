@@ -8,8 +8,8 @@
 
     $loader = require_once('vendor' . SP . 'autoload.php');
     $boot   = Lib\Boot::getInstance(
-        require_once('assets' . SP . 'config' . SP . 'app.php'),
-                    ('assets' . SP . 'config' . SP . 'forward.php')
+        require_once('app' . SP . 'configs' . SP . 'app.php'),
+                    ('app' . SP . 'configs' . SP . 'forward.php')
     );
     $boot->run();
 
